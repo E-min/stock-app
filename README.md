@@ -2,7 +2,7 @@
 StockAPP is a stock management application that allow users to sell or purchase stocks.
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/your-username/stock-app.git`
+1. Clone the repository: `git clone https://github.com/e-min/stock-app.git`
 2. Navigate to the project directory: `cd stock-app`
 3. Install dependencies: `pnpm install`
 
