@@ -1,4 +1,4 @@
-import { Box, Paper, Toolbar, Typography } from "@mui/material"
+import { Box, Paper, Toolbar, Typography } from "@mui/material";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import DashboardCards from "../components/DashboardCards";
@@ -7,21 +7,26 @@ import { useSelector } from "react-redux";
 import useStockCall from "../hooks/useStockCall";
 import { useEffect } from "react";
 
-
 const Dashboard = () => {
   const { getStock } = useStockCall();
   const { sales, purchases } = useSelector(({ stock }) => stock);
+  const { currentUser } = useSelector(({ auth }) => auth);
 
   useEffect(() => {
     getStock("sales");
     getStock("purchases");
   }, []);
 
+  const curUsersSales = sales.filter((sale) => sale.user === currentUser);
+  const curUsersPurchases = purchases.filter(
+    (purchase) => purchase.user === currentUser
+  );
   const salesNum =
-    sales.length !== 0 && sales.reduce((acc, cur) => +cur.price_total + acc, 0);
+    curUsersSales.length &&
+    curUsersSales.reduce((acc, cur) => +cur.price_total + acc, 0);
   const purchasesNum =
-    sales.length !== 0 &&
-    purchases.reduce((acc, cur) => +cur.price_total + acc, 0);
+    curUsersPurchases.length &&
+    curUsersPurchases.reduce((acc, cur) => +cur.price_total + acc, 0);
 
   const digits = (num, type) => {
     if (num >= 1e6) {
@@ -77,8 +82,7 @@ const Dashboard = () => {
       </Box>
       <Toolbar />
       <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Paper>
-        </Paper>
+        <Paper></Paper>
       </Box>
     </Box>
   );

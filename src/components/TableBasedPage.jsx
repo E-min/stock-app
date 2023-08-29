@@ -69,7 +69,7 @@ const TableBasedPage = ({
             handleClose={handleClose}
             handleSubmit={handleSubmit}
             loading={loading}
-            name={selectedRows.map((row) => row.name).join(", ")}
+            name={selectedRows.map((row) => row.id).join(", ")}
           />
         ) : (
           <CustomModalForm 
