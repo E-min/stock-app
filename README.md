@@ -23,7 +23,7 @@ To start the development server, run: `pnpm dev`
 - React Router for single page applications.
 - React Redux for global variables management.
 - Formik and Yup for form management.
-- Toastify for notifies.
+- Toastify for notifications.
 - Material-UI for responsive layout and design.
 
 ## Project Goals
