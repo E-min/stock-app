@@ -16,6 +16,8 @@ To start the development server, run: `pnpm dev`
 - Filtering functionality to easily find and list purchases and sales.
 
 ## Technologies Used
+- pnpm for package management.
+- Vite for development environment.
 - React for the front-end interface.
 - Axios for API calls.
 - React Router for single page applications.
