@@ -16,15 +16,15 @@ To start the development server, run: `pnpm dev`
 - Filtering functionality to easily find and list purchases and sales.
 
 ## Technologies Used
-- pnpm for package management.
-- Vite for development environment.
-- React for the front-end interface.
-- Axios for API calls.
-- React Router for single page applications.
-- React Redux for global variables management.
-- Formik and Yup for form management.
-- Toastify for notifications.
-- Material-UI for responsive layout and design.
+- pnpm | package management.
+- Vite | development environment.
+- React | front-end interface.
+- Axios | API calls.
+- React Router | single page applications.
+- React Redux | global variables management.
+- Formik, Yup | form management.
+- Toastify | notifications.
+- Material-UI | responsive layout and design.
 
 ## Project Goals
 Our goal with StockAPP is to provide users with a simple and responsive UI to manage stocks. We aim to offer a seamless user experience across different devices while keeping the application lightweight and fast.
