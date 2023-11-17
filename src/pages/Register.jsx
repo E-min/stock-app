@@ -78,8 +78,16 @@ const Register = () => {
           p: 2,
         }}
       >
-        <Grid item xs={12}>
-          <Typography variant="h3" color="primary" align="center">
+        <Grid
+          item
+          xs={12}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography variant="h3" color="secondary.main" align="center">
             STOCK APP
           </Typography>
         </Grid>
@@ -87,7 +95,7 @@ const Register = () => {
         <Grid item xs={12} sm={10} md={6}>
           <Avatar
             sx={{
-              backgroundColor: "secondary.light",
+              backgroundColor: "secondary.main",
               m: "auto",
               width: 40,
               height: 40,
@@ -99,7 +107,7 @@ const Register = () => {
             variant="h4"
             align="center"
             mb={2}
-            color="secondary.light"
+            color="secondary.main"
           >
             Register
           </Typography>
@@ -113,6 +121,7 @@ const Register = () => {
               label="User Name"
               name="username"
               id="userName"
+              autoComplete="username"
               type="text"
               variant="outlined"
               value={formik.values.username}
@@ -125,6 +134,7 @@ const Register = () => {
               label="First Name"
               name="first_name"
               id="firstName"
+              autoComplete="given-name"
               type="text"
               variant="outlined"
               value={formik.values.first_name}
@@ -139,6 +149,7 @@ const Register = () => {
               label="Last Name"
               name="last_name"
               id="last_name"
+              autoComplete="family-name"
               type="text"
               variant="outlined"
               value={formik.values.last_name}
@@ -154,6 +165,7 @@ const Register = () => {
               name="email"
               id="email"
               type="email"
+              autoComplete="email"
               variant="outlined"
               value={formik.values.email}
               onChange={formik.handleChange}
@@ -192,6 +204,7 @@ const Register = () => {
               type="submit"
               variant="contained"
               size="large"
+              sx={{bgcolor: "secondary.main", fontWeight: "bold"}}
             >
               Submit
             </LoadingButton>

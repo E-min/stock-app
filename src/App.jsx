@@ -1,30 +1,23 @@
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import AppRouter from "./router/AppRouter";
-import { grey, blueGrey } from "@mui/material/colors";
 import { Provider } from "react-redux";
 import store from "./app/store";
 import { ToastContainer } from "react-toastify";
+import { darkTheme, lightTheme } from "./themes";
+import { CssBaseline } from "@mui/material";
 
 function App() {
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: grey["900"],
-      },
-      secondary: {
-        main: blueGrey["900"],
-      },
-    },
-  });
+  const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = isDarkTheme ? darkTheme : lightTheme;
+
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <Provider store={store}>
-          <AppRouter />
-        </Provider>
-        <ToastContainer />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={lightTheme}>
+      <Provider store={store}>
+        <AppRouter />
+      </Provider>
+      <CssBaseline />
+      <ToastContainer />
+    </ThemeProvider>
   );
 }
 

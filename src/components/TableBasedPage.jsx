@@ -2,13 +2,14 @@ import useStockCall from "../hooks/useStockCall";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { LoadingButton } from "@mui/lab";
-import { IconButton, Paper } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { useState } from "react";
 import { useRef } from "react";
 import CommonModal from "../components/CommonModal";
 import { Delete } from "@mui/icons-material";
 import ActionConfirmation from "../components/ActionConfirmation";
 import { DataGrid } from "@mui/x-data-grid";
+import { Box } from "@mui/material";
 
 const TableBasedPage = ({
   stockData,
@@ -78,13 +79,12 @@ const TableBasedPage = ({
           handleSubmit={handleSubmit} />
         )}
       </CommonModal>
-      <Paper
+      <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           height: 50,
-          p: 1,
         }}
       >
         <LoadingButton
@@ -99,7 +99,7 @@ const TableBasedPage = ({
             <Delete />
           </IconButton>
         )}
-      </Paper>
+      </Box>
       <DataGrid
         rows={stockData}
         columns={columns}

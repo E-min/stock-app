@@ -56,10 +56,20 @@ const Login = () => {
         sx={{
           height: "100vh",
           p: 2,
+          bgcolor: "background.default",
         }}
       >
-        <Grid item xs={12} mb={3}>
-          <Typography variant="h3" color="primary" align="center">
+        <Grid
+          item
+          xs={12}
+          mb={3}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography variant="h3" color="primary.main" align="center">
             STOCK APP
           </Typography>
         </Grid>
@@ -67,7 +77,7 @@ const Login = () => {
         <Grid item xs={12} sm={10} md={6}>
           <Avatar
             sx={{
-              backgroundColor: "secondary.light",
+              backgroundColor: "primary.dark",
               m: "auto",
               width: 40,
               height: 40,
@@ -75,12 +85,7 @@ const Login = () => {
           >
             <LockIcon size="30" />
           </Avatar>
-          <Typography
-            variant="h4"
-            align="center"
-            mb={4}
-            color="secondary.light"
-          >
+          <Typography variant="h4" align="center" mb={4} color="primary.dark">
             Login
           </Typography>
 
@@ -94,6 +99,7 @@ const Login = () => {
               name="email"
               id="email"
               type="email"
+              autoComplete="email"
               variant="outlined"
               value={formik.values.email}
               onChange={formik.handleChange}
@@ -113,7 +119,16 @@ const Login = () => {
               error={formik.touched.password && Boolean(formik.errors.password)}
               helperText={formik.touched.password && formik.errors.password}
             />
-            <LoadingButton loading={loading} variant="contained" type="submit">
+            <LoadingButton
+              loading={loading}
+              variant="contained"
+              type="submit"
+              sx={{
+                bgcolor: "primary.dark",
+                color: "primary.default",
+                fontWeight: "bold",
+              }}
+            >
               Submit
             </LoadingButton>
           </Box>
